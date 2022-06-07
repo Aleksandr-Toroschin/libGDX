@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="74" height="58" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="3">
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="74" height="58" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="6">
  <tileset firstgid="1" name="1626794363_10-kartinkin-com-p-piksel-art-taili-art-krasivo-10" tilewidth="16" tileheight="16" tilecount="4096" columns="64">
   <image source="1626794363_10-kartinkin-com-p-piksel-art-taili-art-krasivo-10.png" width="1024" height="1024"/>
  </tileset>
@@ -16,6 +16,17 @@
  <objectgroup id="5" name="Слой объектов 1">
   <object id="1" x="172" y="151" width="82" height="50"/>
   <object id="2" name="camera" x="389" y="206">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="монетки">
+  <object id="3" x="220" y="269">
+   <point/>
+  </object>
+  <object id="4" x="718" y="403">
+   <point/>
+  </object>
+  <object id="5" x="496" y="443">
    <point/>
   </object>
  </objectgroup>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="80" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="22">
+ <tileset firstgid="1" name="sheet" tilewidth="16" tileheight="16" tilecount="136" columns="17">
+  <image source="sheet.png" width="272" height="128"/>
+ </tileset>
+ <layer id="1" name="Tiles1" width="80" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztm0tOwzAQhr0ECgfguedRKIWuIqp0TW5AwxHg/jtsEUuj0aRJ7JnEdeaXPmFZiTP5bIiL0oUx5lwJ4sJyZzShuTHqLybqLy7qLy7H4O/Kcj11ES1J3Z93l6rDMfy9WtaWN8sXwPeviXOwt1Q9On8nllNLBdpn2u7dvmyoQVvpT2n+UxvN0GyN+ovJXP1VTOPM0d/K8N3rHP3tjPoLyQqg/oZnB1B//bMikPD3wzRmatkRcPqD85JbqLXHvf7gvOQWau05uH7XnL9vREX0dfFh+WxYBpwfQkidEvwiaqKvixLNydDzQwipUwJ478Ycz3M4hTrh89cnhbr6JIU61V9c1F9c1F9c1F9chvhz+7pnxItYZd2Be+Cpahvizx1bIPC5U2Wq2nL255Beh7n4o+LrLYWvgcfPxZ+Lr1lqHebuz0VyHc7Jn8Q6pPy1/W+sj78NY21cwXWXzGM/WB4tTx1t6vlWNMe4Od00LHuON1abqjl0zIro43qHxvvbMo2ZItQ7VrcBvCP2RB9FyLWGQt1fgX5CCuLctrFroi/l908P5R7AORYGBj9bU39/N7Wov7iov7iM6W8vNO6UkfC3MIe/X5dTJPy5Mdr2S2P/bWibS655zN2fq4Xat3HVgT/b+u9/QE5bwMd5qD0r3Ie2nSfBoX211DWn/kx07PwBntC/lw==
+  </data>
+ </layer>
+ <layer id="2" name="Tiles2" width="80" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2LENwCAMBECmywbsv0oKqkQpUkTEPGfpegziQW5NKaX2rKO4XmANwJBwH3tIHwBAbf4bwJ1cgGGVu2B+AABQgz8ZwJVcBJ68yYZZ+fHlXG3GjE6u1uEsAOB/3uN17Xp2iX0n9mRvSHECXiTv1g==
+  </data>
+ </layer>
+ <objectgroup id="5" name="camera">
+  <object id="21" name="camera" x="84.0509" y="766.156">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="Coins">
+  <object id="1" x="246.765" y="325.428">
+   <point/>
+  </object>
+  <object id="2" x="563.572" y="118.533">
+   <point/>
+  </object>
+  <object id="3" x="1030.16" y="324.35">
+   <point/>
+  </object>
+  <object id="4" x="1065.72" y="584.046">
+   <point/>
+  </object>
+  <object id="5" x="774.777" y="760.768">
+   <point/>
+  </object>
+  <object id="6" x="266.161" y="712.277">
+   <point/>
+  </object>
+  <object id="7" x="183.188" y="455.814">
+   <point/>
+  </object>
+  <object id="8" x="721.976" y="431.03">
+   <point/>
+  </object>
+  <object id="9" x="1213.35" y="118.533">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="Objects2" visible="0">
+  <object id="10" x="503.228" y="325.428">
+   <point/>
+  </object>
+  <object id="11" x="104.525" y="582.968">
+   <point/>
+  </object>
+  <object id="12" x="178.878" y="757.536">
+   <point/>
+  </object>
+  <object id="13" x="901.931" y="725.208">
+   <point/>
+  </object>
+  <object id="14" x="962.275" y="553.874">
+   <point/>
+  </object>
+  <object id="15" x="1246.75" y="758.613">
+   <point/>
+  </object>
+  <object id="16" x="1184.26" y="324.35">
+   <point/>
+  </object>
+  <object id="17" x="949.344" y="116.378">
+   <point/>
+  </object>
+ </objectgroup>
+</map>
