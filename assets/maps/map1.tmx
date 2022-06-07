@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="74" height="58" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="6">
+ <tileset firstgid="1" name="1626794363_10-kartinkin-com-p-piksel-art-taili-art-krasivo-10" tilewidth="16" tileheight="16" tilecount="4096" columns="64">
+  <image source="1626794363_10-kartinkin-com-p-piksel-art-taili-art-krasivo-10.png" width="1024" height="1024"/>
+ </tileset>
+ <layer id="1" name="Слой тайлов 1" width="74" height="58">
+  <data encoding="base64" compression="zlib">
+   eJzt2VduwkAYRWFkm1TYFL1uil43BemBPeX4FSG4mSCI7PvwPQ0j2788BySSqFBI7Kzon4sPeE6eU1bnVEEVNdTRQBMttNFB90Lrpz5zjeun6z30A+Y0wBAjjDHBFDPMscDyQuunPnON66frK6wD5rTBFi85scM+YE5RTAvi29//tZR41nIc0Cf2VHM0pxXPug6Y04A9wxzNacez7gPmtGHPNkdzKiWcuySgT+yJk9vf/7X0eCf67tNZ7pPGfdK4Txr3SeM+adwnjfukcZ807pPGfdK4Txr3SeM+adwnjfukcZ80Sp8O/29NuU/anNwnbU55O3dKn3zuwvuUt3MX2qe8/S5wnzTuk0bp0zHuk8Z90rhPGvfJfTrGfdK4Txr3SRPapwrvYBU11NFAEy200UE3Q+s99APO3YA9Q4wwxgRTzDDHAssMra+wDpjThj3btON4xRve8YFPfOE7Q+s77APmFBX5vkOCIu5wjwc84gnPGVovoVz8/ZzMzMzMzP7qB4uY1FI=
+  </data>
+ </layer>
+ <layer id="4" name="Слой тайлов 2" width="74" height="58">
+  <data encoding="base64" compression="zlib">
+   eJzt2MdOG1EYhuFjOyBWODRRjAv1PlL2dFFsetkmt0DZpyvF2JCeXXILlH26Uqjp2SWXkDeLLAij8RzwzJzB/yc9G2TJ41fjmTFKyWQymUwmk8lkMpns/0XDSp1GFapRg1rUhf0+MrPWRY9u9KAXfejHgHQ6sEv0uIwruIpruI4b0unAntPjBV7iFV7jDd6WSKfHIaWehAq/Lhrh+oQqVKMGtaiLuH+MJuwHjX7adPrXsYse3ehBL/rQj4ES6VRohTq6uflKpRawiKVKf44hCFujzTo2sOlxJ6fXIxMWiioVRgSnot6+93G/R152PkObsziH8x53Ou68vF7N02YBi1gKWCcvt0abdWxg04BO9TwrNqARTYihuUSeH3U2SJMhDGMEaWSk06HdpMkt3MYdZLGs0akFrWhDOzrQ6cqR+rt3NHmPD/iILWxrdJrEFKYxg1nMuXKk/q6e3x4NaEQTYmjW+D1yF/dwHw/wEI9cOVJ/N0iTIQxjBGlkNDp9wmd8wVd8w3dXjjTYa+F5qhVtaEcHOov0jBXn+59AEqkA3FvsnsMn+fsUpjGDWcwVqdMobcYwjokAdPLr/wY52uSxglUDOl2oUOpihd9HcXg7tNnFHvYN6PSURs8cdvKyaZz7SQJJpAz4n+AvPvdvh59dp2nQ5vQccPI6naZBm9Nz4CSfK07m9Bw4yedKkJct4zc3csiX+X005t73t2izjR3sGtDJ6rpj1a7YPZN89pTN54+V85sbcSTKi/e+R53VdceqXaHruG7HcRpN2HRK0yaDUYwZ0MlqVu0KXcd174crNFq16ZSlzTJyyBva6SjTvR/u0WjfgOuOTCaTyWQymUwmk8lkMtnf/QFKCIOV
+  </data>
+ </layer>
+ <objectgroup id="5" name="Слой объектов 1">
+  <object id="1" x="172" y="151" width="82" height="50"/>
+  <object id="2" name="camera" x="389" y="206">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="монетки">
+  <object id="3" x="220" y="269">
+   <point/>
+  </object>
+  <object id="4" x="718" y="403">
+   <point/>
+  </object>
+  <object id="5" x="496" y="443">
+   <point/>
+  </object>
+ </objectgroup>
+</map>
