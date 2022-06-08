@@ -3,10 +3,13 @@ package ru.toroschin.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
@@ -19,6 +22,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class GdxGame extends ApplicationAdapter {
@@ -32,19 +36,28 @@ public class GdxGame extends ApplicationAdapter {
     private OrthogonalTiledMapRenderer mapRenderer;
     private OrthographicCamera camera;
     private List<Coin> coins;
+    private Texture fon;
+    private ShapeRenderer shapeRenderer;
+    private Rectangle heroRect;
 
     private int[] foreGround, backGround;
     private int x, y;
+    private Color heroColor;
+    private int score;
 
     @Override
     public void create() {
 //        coins.add(new Coin(new Vector2(0,0)));
 
+        fon = new Texture("fon.png");
         batch = new SpriteBatch();
+        shapeRenderer = new ShapeRenderer();
+
         scale = 1;
         animationMario = new AnimationPLayer("mario.png", 9, 1, 16, Animation.PlayMode.LOOP);
+        heroRect = new Rectangle(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, animationMario.getFrame().getRegionWidth(), animationMario.getFrame().getRegionHeight());
 
-        label = new Label(36);
+        label = new Label(20);
         map = new TmxMapLoader(). load("maps/map2.tmx");
         mapRenderer = new OrthogonalTiledMapRenderer(map);
 
@@ -59,7 +72,7 @@ public class GdxGame extends ApplicationAdapter {
         RectangleMapObject o = (RectangleMapObject) map.getLayers().get("camera").getObjects().get("camera");
         camera.position.x = o.getRectangle().x;
         camera.position.y = o.getRectangle().y;
-        camera.zoom = 0.7f;
+        camera.zoom = 0.65f;
         camera.update();
 
         coins = new ArrayList<>();
@@ -88,6 +101,10 @@ public class GdxGame extends ApplicationAdapter {
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) camera.position.y--;
         camera.update();
 
+        batch.begin();
+        batch.draw(fon, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        batch.end();
+
         mapRenderer.setView(camera);
         mapRenderer.render(backGround);
 
@@ -98,12 +115,38 @@ public class GdxGame extends ApplicationAdapter {
 
         batch.begin();
         batch.draw(animationMario.getFrame(), Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2);
-        label.draw(batch, "Марио!", 10, Gdx.graphics.getHeight() - 10);
-        for (Coin coin : coins) {
+        label.draw(batch, "Монеток: " + score, 10, Gdx.graphics.getHeight() - 10);
+
+        Iterator<Coin> iterator = coins.iterator();
+        while (iterator.hasNext()) {
+            Coin coin = iterator.next();
             coin.draw(batch, camera);
+            if (coin.isOverlaps(heroRect, camera)) {
+                iterator.remove();
+                score++;
+            }
         }
         batch.end();
+
+//        heroColor = Color.WHITE;
         mapRenderer.render(foreGround);
+
+//        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+//        shapeRenderer.setColor(heroColor);
+//        Iterator<Coin> iterator = coins.iterator();
+//        while (iterator.hasNext()) {
+//            Coin coin = iterator.next();
+////            coin.shapeDraw(shapeRenderer, camera);
+//            if (coin.isOverlaps(heroRect, camera)) {
+//                iterator.remove();
+//                score++;
+////                heroColor = Color.BLUE;
+//            }
+//        }
+//        shapeRenderer.setColor(heroColor);
+//        shapeRenderer.rect(heroRect.x, heroRect.y, heroRect.width, heroRect.height);
+//        shapeRenderer.circle(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, Gdx.graphics.getHeight()/5);
+//        shapeRenderer.end();
     }
 
     @Override
@@ -114,5 +157,6 @@ public class GdxGame extends ApplicationAdapter {
         for (Coin coin : coins) {
             coin.dispose();
         }
+        fon.dispose();
     }
 }
