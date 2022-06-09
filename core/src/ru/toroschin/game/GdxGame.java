@@ -30,7 +30,8 @@ public class GdxGame extends ApplicationAdapter {
     private TextureRegion region;
     private float time;
     private float scale;
-    private AnimationPLayer animationMario;
+//    private AnimationPLayer animationMario;
+    private Person marioNew;
     private Label label;
     private TiledMap map;
     private OrthogonalTiledMapRenderer mapRenderer;
@@ -38,7 +39,7 @@ public class GdxGame extends ApplicationAdapter {
     private List<Coin> coins;
     private Texture fon;
     private ShapeRenderer shapeRenderer;
-    private Rectangle heroRect;
+//    private Rectangle heroRect;
 
     private int[] foreGround, backGround;
     private int x, y;
@@ -47,15 +48,16 @@ public class GdxGame extends ApplicationAdapter {
 
     @Override
     public void create() {
-//        coins.add(new Coin(new Vector2(0,0)));
+
+        marioNew = new Person();
 
         fon = new Texture("fon.png");
         batch = new SpriteBatch();
-        shapeRenderer = new ShapeRenderer();
+//        shapeRenderer = new ShapeRenderer();
 
         scale = 1;
-        animationMario = new AnimationPLayer("mario.png", 9, 1, 16, Animation.PlayMode.LOOP);
-        heroRect = new Rectangle(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, animationMario.getFrame().getRegionWidth(), animationMario.getFrame().getRegionHeight());
+//        animationMario = new AnimationPLayer("mario.png", 9, 1, 16, Animation.PlayMode.LOOP);
+//        heroRect = new Rectangle(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, animationMario.getFrame().getRegionWidth(), animationMario.getFrame().getRegionHeight());
 
         label = new Label(20);
         map = new TmxMapLoader(). load("maps/map2.tmx");
@@ -95,10 +97,25 @@ public class GdxGame extends ApplicationAdapter {
 
         float prevX = camera.position.x;
         float prevY = camera.position.y;
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) camera.position.x--;
-        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) camera.position.x++;
-        if (Gdx.input.isKeyPressed(Input.Keys.UP)) camera.position.y++;
+        marioNew.setWalk(false);
+        marioNew.setJump(false);
+        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+            camera.position.x--;
+            marioNew.setDir(true);
+            marioNew.setWalk(true);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+            camera.position.x++;
+            marioNew.setDir(false);
+            marioNew.setWalk(true);
+        }
+//        if (Gdx.input.isKeyPressed(Input.Keys.UP)) camera.position.y++;
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) camera.position.y--;
+        if (Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
+            camera.position.y += 60;
+            marioNew.setWalk(false);
+            marioNew.setJump(true);
+        }
         camera.update();
 
         batch.begin();
@@ -108,55 +125,39 @@ public class GdxGame extends ApplicationAdapter {
         mapRenderer.setView(camera);
         mapRenderer.render(backGround);
 
-        if ((Math.abs(prevX - camera.position.x) < 0.01) && (Math.abs(prevY - camera.position.y) < 0.01)) {
-            animationMario.reSetTime();
-        }
-        animationMario.step(Gdx.graphics.getDeltaTime());
+//        if ((Math.abs(prevX - camera.position.x) < 0.01) && (Math.abs(prevY - camera.position.y) < 0.01)) {
+//            animationMario.reSetTime();
+//        }
+//        animationMario.step(Gdx.graphics.getDeltaTime());
 
         batch.begin();
-        batch.draw(animationMario.getFrame(), Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2);
+        batch.draw(marioNew.getFrame(), Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2);
         label.draw(batch, "Монеток: " + score, 10, Gdx.graphics.getHeight() - 10);
 
         Iterator<Coin> iterator = coins.iterator();
         while (iterator.hasNext()) {
             Coin coin = iterator.next();
             coin.draw(batch, camera);
-            if (coin.isOverlaps(heroRect, camera)) {
+            if (coin.isOverlaps(marioNew.getRect(), camera)) {
                 iterator.remove();
                 score++;
             }
         }
         batch.end();
 
-//        heroColor = Color.WHITE;
         mapRenderer.render(foreGround);
 
-//        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-//        shapeRenderer.setColor(heroColor);
-//        Iterator<Coin> iterator = coins.iterator();
-//        while (iterator.hasNext()) {
-//            Coin coin = iterator.next();
-////            coin.shapeDraw(shapeRenderer, camera);
-//            if (coin.isOverlaps(heroRect, camera)) {
-//                iterator.remove();
-//                score++;
-////                heroColor = Color.BLUE;
-//            }
-//        }
-//        shapeRenderer.setColor(heroColor);
-//        shapeRenderer.rect(heroRect.x, heroRect.y, heroRect.width, heroRect.height);
-//        shapeRenderer.circle(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, Gdx.graphics.getHeight()/5);
-//        shapeRenderer.end();
     }
 
     @Override
     public void dispose() {
         batch.dispose();
-        animationMario.dispose();
+//        animationMario.dispose();
         label.dispose();
         for (Coin coin : coins) {
             coin.dispose();
         }
+
         fon.dispose();
     }
 }
