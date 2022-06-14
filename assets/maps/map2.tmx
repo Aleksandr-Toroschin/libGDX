@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="80" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="22">
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="80" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="26">
  <tileset firstgid="1" name="sheet" tilewidth="16" tileheight="16" tilecount="136" columns="17">
   <image source="sheet.png" width="272" height="128"/>
  </tileset>
@@ -8,6 +8,12 @@
    eJztm0tOwzAQhr0ECgfguedRKIWuIqp0TW5AwxHg/jtsEUuj0aRJ7JnEdeaXPmFZiTP5bIiL0oUx5lwJ4sJyZzShuTHqLybqLy7qLy7H4O/Kcj11ES1J3Z93l6rDMfy9WtaWN8sXwPeviXOwt1Q9On8nllNLBdpn2u7dvmyoQVvpT2n+UxvN0GyN+ovJXP1VTOPM0d/K8N3rHP3tjPoLyQqg/oZnB1B//bMikPD3wzRmatkRcPqD85JbqLXHvf7gvOQWau05uH7XnL9vREX0dfFh+WxYBpwfQkidEvwiaqKvixLNydDzQwipUwJ478Ycz3M4hTrh89cnhbr6JIU61V9c1F9c1F9c1F9chvhz+7pnxItYZd2Be+Cpahvizx1bIPC5U2Wq2nL255Beh7n4o+LrLYWvgcfPxZ+Lr1lqHebuz0VyHc7Jn8Q6pPy1/W+sj78NY21cwXWXzGM/WB4tTx1t6vlWNMe4Od00LHuON1abqjl0zIro43qHxvvbMo2ZItQ7VrcBvCP2RB9FyLWGQt1fgX5CCuLctrFroi/l908P5R7AORYGBj9bU39/N7Wov7iov7iM6W8vNO6UkfC3MIe/X5dTJPy5Mdr2S2P/bWibS655zN2fq4Xat3HVgT/b+u9/QE5bwMd5qD0r3Ie2nSfBoX211DWn/kx07PwBntC/lw==
   </data>
  </layer>
+ <objectgroup id="6" name="Земля">
+  <object id="22" x="14.3333" y="769" width="242.333" height="9"/>
+  <object id="23" x="258" y="720.667" width="7.33333" height="47"/>
+  <object id="24" x="265.333" y="720.333" width="117" height="7"/>
+  <object id="25" x="0.333333" y="639.667" width="13.3333" height="129.333"/>
+ </objectgroup>
  <layer id="2" name="Tiles2" width="80" height="50">
   <data encoding="base64" compression="zlib">
    eJzt2LENwCAMBECmywbsv0oKqkQpUkTEPGfpegziQW5NKaX2rKO4XmANwJBwH3tIHwBAbf4bwJ1cgGGVu2B+AABQgz8ZwJVcBJ68yYZZ+fHlXG3GjE6u1uEsAOB/3uN17Xp2iX0n9mRvSHECXiTv1g==
