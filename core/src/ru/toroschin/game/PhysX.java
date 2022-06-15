@@ -83,7 +83,7 @@ public class PhysX {
         fdef.density = (float) obj.getProperties().get("density");
         fdef.friction = (float) obj.getProperties().get("friction");
 
-        if (obj.getName().equals("hero")) {
+        if (obj.getName() != null && obj.getName().equals("hero")) {
             hero = world.createBody(def);
             hero.createFixture(fdef).setUserData(name);
         } else {
@@ -95,50 +95,9 @@ public class PhysX {
     }
 
     public void addObjects(MapObjects objects) {
-        BodyDef def = new BodyDef();
-        FixtureDef fdef = new FixtureDef();
-        PolygonShape poly_h = new PolygonShape();
-
-        CircleShape circleShape = new CircleShape();
-
         for (MapObject obj : objects) {
-            switch ((String) obj.getProperties().get("type")) {
-                case "Static":
-                    def.type = BodyDef.BodyType.StaticBody;
-                    break;
-                case "Dynamic":
-                    def.type = BodyDef.BodyType.DynamicBody;
-                    break;
-                case "Kinematic":
-                    def.type = BodyDef.BodyType.KinematicBody;
-                    break;
-            }
-            String name = (String) obj.getProperties().get("name");
-            switch (name) {
-                case "wall":
-                    RectangleMapObject rect = (RectangleMapObject) obj;
-                    def.position.set(new Vector2(rect.getRectangle().x + rect.getRectangle().width / 2, rect.getRectangle().y + rect.getRectangle().height / 2));
-                    poly_h.setAsBox(rect.getRectangle().width / 2, rect.getRectangle().height / 2);
-                    fdef.shape = poly_h;
-                    break;
-                case "circle":
-                    EllipseMapObject ellipseMapObject = (EllipseMapObject) obj;
-                    def.position.set(new Vector2(ellipseMapObject.getEllipse().x + ellipseMapObject.getEllipse().width / 2, ellipseMapObject.getEllipse().y + ellipseMapObject.getEllipse().height / 2));
-                    circleShape.setRadius(ellipseMapObject.getEllipse().width/2);
-                    fdef.shape = circleShape;
-                    break;
-            }
-
-            def.gravityScale = (float) obj.getProperties().get("gravityScale");
-            fdef.restitution = (float) obj.getProperties().get("restitution");
-            fdef.density = (float) obj.getProperties().get("density");
-            fdef.friction = (float) obj.getProperties().get("friction");
-
-            world.createBody(def).createFixture(fdef).setUserData(name);
+            addObject(obj);
         }
-
-        poly_h.dispose();
-        circleShape.dispose();
     }
 
     public void setHeroForce(Vector2 force) {
