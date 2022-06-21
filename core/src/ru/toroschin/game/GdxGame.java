@@ -3,6 +3,7 @@ package ru.toroschin.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -17,9 +18,6 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.ArrayList;
@@ -48,6 +46,8 @@ public class GdxGame extends ApplicationAdapter {
 
     private PhysX physX;
 
+    private Music music;
+
     @Override
     public void create() {
         map = new TmxMapLoader(). load("maps/map2.tmx");
@@ -59,6 +59,7 @@ public class GdxGame extends ApplicationAdapter {
             physX.addObjects(mo);
             MapObject ho = map.getLayers().get("camera").getObjects().get("hero");
             physX.addObject(ho);
+
         }
 
         camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -94,6 +95,12 @@ public class GdxGame extends ApplicationAdapter {
                 }
             }
         }
+
+//        music = Gdx.audio.newMusic(Gdx.files.internal(""));
+//        music.setLooping(true);
+//        music.setVolume(0.125f);
+//        music.play();
+
     }
 
     @Override
@@ -113,9 +120,14 @@ public class GdxGame extends ApplicationAdapter {
             mario.setWalk(true);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            physX.setHeroForce(new Vector2(0, 15000));
-            mario.setWalk(false);
-            mario.setJump(true);
+            if (physX.getSens().isOnGround()) {
+                physX.setHeroForce(new Vector2(0, 50000));
+                mario.setWalk(false);
+                mario.setJump(true);
+            }
+        }
+        if (physX.getSens().isBadContact()) {
+            System.exit(0);
         }
         camera.position.x = physX.getHero().getPosition().x;
         camera.position.y = physX.getHero().getPosition().y;
@@ -161,5 +173,6 @@ public class GdxGame extends ApplicationAdapter {
 
         fon.dispose();
         physX.dispose();
+        music.dispose();
     }
 }
