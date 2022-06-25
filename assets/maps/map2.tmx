@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="80" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="101">
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="80" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="119">
  <tileset firstgid="1" name="sheet" tilewidth="16" tileheight="16" tilecount="136" columns="17">
   <image source="sheet.png" width="272" height="128"/>
  </tileset>
@@ -151,7 +151,7 @@
     <property name="type" value="Static"/>
    </properties>
   </object>
-  <object id="39" x="327.167" y="616.167" width="104.667" height="7">
+  <object id="39" x="331.5" y="616.167" width="100.334" height="7">
    <properties>
     <property name="density" type="float" value="0"/>
     <property name="friction" type="float" value="0"/>
@@ -241,7 +241,7 @@
     <property name="type" value="Static"/>
    </properties>
   </object>
-  <object id="48" x="325.583" y="592.75" width="571.583" height="9">
+  <object id="48" x="329.916" y="592.75" width="567.25" height="9">
    <properties>
     <property name="density" type="float" value="0"/>
     <property name="friction" type="float" value="1"/>
@@ -611,7 +611,7 @@
     <property name="type" value="Static"/>
    </properties>
   </object>
-  <object id="88" name="upCircle" x="388" y="627" width="41" height="39">
+  <object id="88" name="upCircle" x="388" y="627" width="20" height="20">
    <properties>
     <property name="awake" type="bool" value="false"/>
     <property name="density" type="float" value="0.2"/>
@@ -635,7 +635,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="90" name="upCircle" x="157.5" y="660.5" width="41" height="39">
+  <object id="90" name="upCircle" x="157.5" y="660.5" width="20" height="20">
    <properties>
     <property name="awake" type="bool" value="false"/>
     <property name="density" type="float" value="0.2"/>
@@ -643,18 +643,6 @@
     <property name="gravityScale" type="float" value="10"/>
     <property name="name" value="circle"/>
     <property name="restitution" type="float" value="1"/>
-    <property name="type" value="Dynamic"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="91" name="upCircle" x="295" y="605" width="20" height="20">
-   <properties>
-    <property name="awake" type="bool" value="false"/>
-    <property name="density" type="float" value="0.2"/>
-    <property name="friction" type="float" value="0"/>
-    <property name="gravityScale" type="float" value="3"/>
-    <property name="name" value="circle"/>
-    <property name="restitution" type="float" value="0"/>
     <property name="type" value="Dynamic"/>
    </properties>
    <ellipse/>
@@ -671,7 +659,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="93" name="upCircle" x="538" y="653" width="35" height="31">
+  <object id="93" name="upCircle" x="538" y="653" width="20" height="20">
    <properties>
     <property name="awake" type="bool" value="false"/>
     <property name="density" type="float" value="0.2"/>
@@ -683,7 +671,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="95" name="upCircle" x="644" y="654" width="28.6667" height="26">
+  <object id="95" name="upCircle" x="644" y="654" width="20" height="20">
    <properties>
     <property name="awake" type="bool" value="false"/>
     <property name="density" type="float" value="0.2"/>
@@ -712,7 +700,7 @@
     <property name="awake" type="bool" value="false"/>
     <property name="density" type="float" value="0.2"/>
     <property name="friction" type="float" value="0"/>
-    <property name="gravityScale" type="float" value="7"/>
+    <property name="gravityScale" type="float" value="5"/>
     <property name="name" value="circle"/>
     <property name="restitution" type="float" value="1"/>
     <property name="type" value="Dynamic"/>
@@ -725,6 +713,164 @@
     <property name="density" type="float" value="0.2"/>
     <property name="friction" type="float" value="0"/>
     <property name="gravityScale" type="float" value="7"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="101" name="ladder" x="1204" y="594.667" width="9.33333" height="168">
+   <properties>
+    <property name="density" type="float" value="0"/>
+    <property name="friction" type="float" value="1"/>
+    <property name="gravityScale" type="float" value="1"/>
+    <property name="name" value="wall"/>
+    <property name="restitution" type="float" value="0"/>
+    <property name="type" value="Static"/>
+   </properties>
+  </object>
+  <object id="102" name="ladder" x="739.333" y="341.333" width="9.33333" height="134.667">
+   <properties>
+    <property name="density" type="float" value="0"/>
+    <property name="friction" type="float" value="1"/>
+    <property name="gravityScale" type="float" value="1"/>
+    <property name="name" value="wall"/>
+    <property name="restitution" type="float" value="0"/>
+    <property name="type" value="Static"/>
+   </properties>
+  </object>
+  <object id="103" name="ladder" x="67.6667" y="338.667" width="9.33333" height="252">
+   <properties>
+    <property name="density" type="float" value="0"/>
+    <property name="friction" type="float" value="1"/>
+    <property name="gravityScale" type="float" value="1"/>
+    <property name="name" value="wall"/>
+    <property name="restitution" type="float" value="0"/>
+    <property name="type" value="Static"/>
+   </properties>
+  </object>
+  <object id="104" name="ladder" x="35.3333" y="135" width="9.33333" height="167">
+   <properties>
+    <property name="density" type="float" value="0"/>
+    <property name="friction" type="float" value="1"/>
+    <property name="gravityScale" type="float" value="1"/>
+    <property name="name" value="wall"/>
+    <property name="restitution" type="float" value="0"/>
+    <property name="type" value="Static"/>
+   </properties>
+  </object>
+  <object id="105" name="ladder" x="979.333" y="199.666" width="9.33333" height="134.667">
+   <properties>
+    <property name="density" type="float" value="0"/>
+    <property name="friction" type="float" value="1"/>
+    <property name="gravityScale" type="float" value="1"/>
+    <property name="name" value="wall"/>
+    <property name="restitution" type="float" value="0"/>
+    <property name="type" value="Static"/>
+   </properties>
+  </object>
+  <object id="110" name="upCircle" x="592" y="460" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="3"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="111" name="upCircle" x="446" y="225" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="3"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="112" name="upCircle" x="1102" y="216" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="3"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="113" name="upCircle" x="1238" y="494" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="3"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="114" name="upCircle" x="293" y="239" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="3"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="115" name="upCircle" x="809" y="30" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="3"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="116" name="upCircle" x="875" y="30" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="5"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="117" name="upCircle" x="939" y="28" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="7"/>
+    <property name="name" value="circle"/>
+    <property name="restitution" type="float" value="1"/>
+    <property name="type" value="Dynamic"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="118" name="upCircle" x="1006" y="29" width="20" height="20">
+   <properties>
+    <property name="awake" type="bool" value="false"/>
+    <property name="density" type="float" value="0.2"/>
+    <property name="friction" type="float" value="0"/>
+    <property name="gravityScale" type="float" value="9"/>
     <property name="name" value="circle"/>
     <property name="restitution" type="float" value="1"/>
     <property name="type" value="Dynamic"/>
@@ -744,7 +890,7 @@
   <object id="28" name="hero" x="39.3333" y="694.25" width="33" height="33">
    <properties>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="2"/>
+    <property name="friction" type="float" value="4"/>
     <property name="gravityScale" type="float" value="20"/>
     <property name="name" value="wall"/>
     <property name="restitution" type="float" value="0"/>
@@ -771,7 +917,7 @@
   <object id="6" x="287.661" y="736.027">
    <point/>
   </object>
-  <object id="7" x="183.188" y="455.814">
+  <object id="7" x="127.855" y="585.147">
    <point/>
   </object>
   <object id="8" x="721.976" y="431.03">
@@ -781,6 +927,18 @@
    <point/>
   </object>
   <object id="94" x="333.25" y="663.75">
+   <point/>
+  </object>
+  <object id="106" x="272" y="590">
+   <point/>
+  </object>
+  <object id="107" x="700" y="50">
+   <point/>
+  </object>
+  <object id="108" x="852" y="588">
+   <point/>
+  </object>
+  <object id="109" x="202" y="463">
    <point/>
   </object>
  </objectgroup>

@@ -1,7 +1,6 @@
 package ru.toroschin.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,19 +9,19 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Coin {
-    private AnimationPLayer player;
+    private AnimationPlayer player;
     private Vector2 position;
     private Rectangle rectangle;
-    private Sound sound;
+//    private Sound sound;
     private int state;
 
     public void setState() {
-        sound.play();
+//        sound.play();
         state = 1;
     }
 
     public Coin(Vector2 position) {
-        this.player = new AnimationPLayer("maps/Full_coins.png", 8, 1, 10, Animation.PlayMode.LOOP);
+        this.player = new AnimationPlayer("maps/Full_coins.png", 8, 1, 10, Animation.PlayMode.LOOP);
         this.position = position;
         rectangle = new Rectangle(position.x, position.y, player.getFrame().getRegionWidth(), player.getFrame().getRegionHeight());
 //        sound = Gdx.audio.newSound(Gdx.files.internal(""));
@@ -54,6 +53,6 @@ public class Coin {
 
     public void dispose() {
         player.dispose();
-        sound.dispose();
+//        sound.dispose();
     }
 }

@@ -1,6 +1,7 @@
 package ru.toroschin.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
@@ -8,14 +9,15 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 public class Label {
     BitmapFont bitmapFont;
 
-    public Label(int size) {
+    public Label(int size, Color color) {
         FreeTypeFontGenerator fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("font.ttf"));
 
         FreeTypeFontGenerator.FreeTypeFontParameter fontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         fontParameter.size = size;
-        fontParameter.characters = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ.1234567890-=йцукенгшщзхъфывапролджэячсмитьбю,!№;%:?*()_+";
+        fontParameter.characters = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ.1234567890-=йцукенгшщзхъфывапролджэячсмитьбю,!№;%:?*()_+qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
 
         bitmapFont = fontGenerator.generateFont(fontParameter);
+        bitmapFont.setColor(color);
 
 //        bitmapFont = new BitmapFont();
 //        bitmapFont.getData().setScale(3);
