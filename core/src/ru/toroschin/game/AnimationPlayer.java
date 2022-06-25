@@ -6,13 +6,13 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import javax.xml.soap.Text;
 
-public class AnimationPLayer {
+public class AnimationPlayer {
     Animation<TextureRegion> animation;
     Texture texture;
     private float time;
     private Animation.PlayMode loop;
 
-    public AnimationPLayer(String name, int width, int height, float fps, Animation.PlayMode mode) {
+    public AnimationPlayer(String name, int width, int height, float fps, Animation.PlayMode mode) {
         this.loop = mode;
         texture = new Texture(name);
         TextureRegion region = new TextureRegion(texture);

@@ -7,16 +7,16 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Person {
-    private AnimationPLayer idle, jump, walkRight;
+    private AnimationPlayer idle, jump, walkRight;
     private boolean isJump, isWalk, dir;
     private Vector2 pos;
     private Rectangle rect;
     private TextureRegion tmpTex;
 
     public Person() {
-        idle = new AnimationPLayer("idle.png", 1, 1, 16f, Animation.PlayMode.LOOP);
-        jump = new AnimationPLayer("jump.png", 3, 1, 16f, Animation.PlayMode.LOOP);
-        walkRight = new AnimationPLayer("walk.png", 6, 1, 16f, Animation.PlayMode.LOOP);
+        idle = new AnimationPlayer("idle.png", 1, 1, 16f, Animation.PlayMode.LOOP);
+        jump = new AnimationPlayer("jump.png", 3, 1, 16f, Animation.PlayMode.LOOP);
+        walkRight = new AnimationPlayer("walk.png", 6, 1, 16f, Animation.PlayMode.LOOP);
         pos = new Vector2(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
         rect = new Rectangle(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2, walkRight.getFrame().getRegionWidth(), walkRight.getFrame().getRegionHeight());
     }
@@ -71,5 +71,11 @@ public class Person {
 
     public Rectangle getRect() {
         return rect;
+    }
+
+    public void dispose() {
+        idle.dispose();
+        jump.dispose();
+        walkRight.dispose();
     }
 }

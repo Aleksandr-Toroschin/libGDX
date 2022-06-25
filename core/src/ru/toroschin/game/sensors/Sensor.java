@@ -43,7 +43,7 @@ public class Sensor implements ContactListener {
             badContact = true;
         }
 
-        if ((s1.equals(UserDataType.ladder.name())) || s2.equals(UserDataType.ladder.name())) ladderCounter++;
+        if (((s1.equals(UserDataType.ladder.name())) || s2.equals(UserDataType.ladder.name())) && ((s1.equals(UserDataType.hero.name())) || s2.equals(UserDataType.hero.name()))) ladderCounter++;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Sensor implements ContactListener {
 
         if ((s1.equals(UserDataType.sensor.name())) || s2.equals(UserDataType.sensor.name())) counter--;
 
-        if ((s1.equals(UserDataType.ladder.name())) || s2.equals(UserDataType.ladder.name())) ladderCounter--;
+        if (((s1.equals(UserDataType.ladder.name())) || s2.equals(UserDataType.ladder.name())) && ((s1.equals(UserDataType.hero.name())) || s2.equals(UserDataType.hero.name()))) ladderCounter--;
     }
 
     @Override

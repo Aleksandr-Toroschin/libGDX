@@ -14,6 +14,9 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ru.toroschin.game.sensors.Sensor;
 
 public class PhysX {
@@ -21,11 +24,13 @@ public class PhysX {
     private final Box2DDebugRenderer debugRenderer;
     private Body hero;
     private Sensor sens;
+    private List<Body> barrels;
 
     public PhysX() {
         world = new World(new Vector2(0, -9.81f), true);
         debugRenderer = new Box2DDebugRenderer();
         sens = new Sensor();
+        barrels = new ArrayList<>();
         world.setContactListener(sens);
     }
 
@@ -34,7 +39,7 @@ public class PhysX {
     }
 
     public void debugDraw(OrthographicCamera camera) {
-        debugRenderer.render(world, camera.combined);
+//        debugRenderer.render(world, camera.combined);
     }
 
     public void dispose() {
@@ -44,6 +49,10 @@ public class PhysX {
 
     public Body getHero() {
         return hero;
+    }
+
+    public List<Body> getBarrels() {
+        return barrels;
     }
 
     public void addBody(BodyDef def, FixtureDef fdef, String userData) {
@@ -108,14 +117,21 @@ public class PhysX {
             fdef.isSensor = true;
             hero.createFixture(fdef).setUserData(UserDataType.heroCircle.name());
         } else {
-            Body objBody = world.createBody(def);
-            objBody.createFixture(fdef).setUserData(name);
-            if (obj.getName() != null && obj.getName().equals(UserDataType.upCircle.name())) {
-                circleShape.setRadius(fdef.shape.getRadius() + 3);
-                circleShape.setPosition(new Vector2(0, 0));
-                fdef.shape = circleShape;
+            if (obj.getName() != null && obj.getName().equals(UserDataType.ladder.name())) {
+                Body objBody = world.createBody(def);
                 fdef.isSensor = true;
-                objBody.createFixture(fdef).setUserData(UserDataType.upCircle.name());
+                objBody.createFixture(fdef).setUserData(UserDataType.ladder.name());
+            } else {
+                Body objBody = world.createBody(def);
+                objBody.createFixture(fdef).setUserData(name);
+                if (obj.getName() != null && obj.getName().equals(UserDataType.upCircle.name())) {
+                    barrels.add(objBody);
+                    circleShape.setRadius(fdef.shape.getRadius() + 3);
+                    circleShape.setPosition(new Vector2(0, 0));
+                    fdef.shape = circleShape;
+                    fdef.isSensor = true;
+                    objBody.createFixture(fdef).setUserData(UserDataType.upCircle.name());
+                }
             }
         }
 
